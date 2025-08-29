@@ -1,0 +1,58 @@
+injected.js:253  POST https://8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate 400 (Bad Request)
+window.fetch @ Network.js:219
+apply @ injected.js:253
+runNgSpiceSimulation @ ngspice-client.ts:43
+(anonymous) @ multimeter-panel.tsx:45
+setTimeout
+(anonymous) @ multimeter-panel.tsx:43
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this error
+injected.js:253  POST https://8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate 400 (Bad Request)
+window.fetch @ Network.js:219
+apply @ injected.js:253
+runNgSpiceSimulation @ ngspice-client.ts:43
+(anonymous) @ oscilloscope-panel.tsx:56
+setTimeout
+(anonymous) @ oscilloscope-panel.tsx:54
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this error
+injected.js:253  POST https://8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate 400 (Bad Request)
+window.fetch @ Network.js:219
+apply @ injected.js:253
+runNgSpiceSimulation @ ngspice-client.ts:43
+(anonymous) @ multimeter-panel.tsx:45
+setTimeout
+(anonymous) @ multimeter-panel.tsx:43
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this error
+injected.js:253  POST https://8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate 400 (Bad Request)

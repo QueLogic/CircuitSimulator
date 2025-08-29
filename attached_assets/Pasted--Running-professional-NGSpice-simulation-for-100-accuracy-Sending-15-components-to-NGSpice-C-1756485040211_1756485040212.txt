@@ -1,0 +1,27 @@
+🔬 Running professional NGSpice simulation for 100% accuracy...
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Professional simulation complete
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+Loading template avalanche-noise with 15 components
+Template components: BAT1, Q1, R7, C1, R9, Q4, R8, C2, C4, OSC, N1, N2, N3, N4, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+🔬 Running professional NGSpice simulation for 100% accuracy...
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+✅ Professional simulation complete
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV

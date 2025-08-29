@@ -1,0 +1,95 @@
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (670, 350)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (670, 340)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (680, 330)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (680, 320)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 320)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 310)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 300)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 290)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 280)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 270)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (690, 260)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (680, 260)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (680, 250)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (680, 240)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (670, 230)
+🔬 Using professional NGSpice results for 100% accurate simulation
+📍 Component OSC moved to (670, 240)
+🔬 Using professional NGSpice results for 100% accurate simulation
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,NOISE] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[DISCONNECTED_1756491521804_hujttk,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, N5
+✅ Professional simulation complete
+🔬 Using professional NGSpice results for 100% accurate simulation
+
+🔌 CONNECTING PINS:
+    From: N5 Pin OUT
+    To:   OSC Pin CH1_TIP
+    ✅ Connected to Net: "Q4B"
+    📊 Total pins on this net: 5
+    🔄 Updating circuit simulation...
+
+🔬 Starting professional NGSpice simulation for 100% accuracy...
+╔════════════════════════════════════════════════════════════╗
+║              📊 CIRCUIT TOPOLOGY ANALYSIS                     ║
+╚════════════════════════════════════════════════════════════╝
+Total components on canvas: 15
+COMPONENT INVENTORY:
+═══════════════════════════════════════════════════════════════
+📌 RESISTORS:
+    • R7: 15kΩ
+    • R9: 100kΩ
+    • R8: 220kΩ
+📌 CAPACITORS:
+    • C1: 1µF (Electrolytic)
+    • C2: 10µF (Electrolytic)
+    • C4: 100µF (Electrolytic)
+📌 TRANSISTORS:
+    • Q1: BC337 (NPN)
+    • Q4: BC549 (NPN)
+📌 POWER SOURCES:
+    • BAT1: 5V
+📌 MEASUREMENT INSTRUMENTS:
+    • OSC: Oscilloscope Monitor
+📌 NODES:
+    • N1
+    • N2
+    • N3
+    • N4
+    • N5
+COMPONENT CONNECTIONS:
+═══════════════════════════════════════════════════════════════
+
+[1] BAT1 - Power Source (5V)
+    Connections:
+      • Positive (+) → Net "+5V"
+      • Negative (-) → Net "GND"
+
+[2] Q1 - Transistor (BC337)
+    Connections:
+      • Collector → Net "GND"
+      • Base → Net "GND"
+      • Emitter → Net "Q1E"
+
+[3] R7 - Resistor (15kΩ)
+    Connections:
+      • Pin 1 → Net "+5V"
+      • Pin 2 → Net "Q1E"
+
+[4] C1 - Electrolytic Capacitor (1µF)
+    Connections:

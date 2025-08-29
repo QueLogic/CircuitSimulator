@@ -1,0 +1,258 @@
+🔬 Running professional NGSpice simulation for 100% accuracy...
+4Console.js:61 ⚠️ Falling back to simplified simulation
+Console.js:61 ✅ Professional simulation complete
+Console.js:61 🔬 Running professional NGSpice simulation for 100% accuracy...
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for NOISE
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for SCOPE_OUT
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+await in refreshWaveform
+(anonymous) @ oscilloscope-panel.tsx:114
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for SCOPE_OUT
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for SCOPE_OUT
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for SCOPE_OUT
+Mt.forEach.n.<computed> @ Console.js:61
+refreshWaveform @ oscilloscope-panel.tsx:103
+setInterval
+(anonymous) @ oscilloscope-panel.tsx:113
+commitHookEffectListMount @ chunk-WERSD76P.js?v=7b21085a:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=7b21085a:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=7b21085a:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=7b21085a:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=7b21085a:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=7b21085a:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=7b21085a:19447
+commitRootImpl @ chunk-WERSD76P.js?v=7b21085a:19416
+commitRoot @ chunk-WERSD76P.js?v=7b21085a:19277
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=7b21085a:18895
+flushSyncCallbacks @ chunk-WERSD76P.js?v=7b21085a:9119
+(anonymous) @ chunk-WERSD76P.js?v=7b21085a:18627Understand this warning
+Console.js:61 🔬 Using professional NGSpice results for 100% accurate simulation
+Console.js:61 ⚠️ No time-series data available for SCOPE_OUT

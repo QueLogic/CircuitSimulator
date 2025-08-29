@@ -1,0 +1,44 @@
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+eruda.js:sourcemap:2 ✅ Professional simulation complete
+eruda.js:sourcemap:2 🔬 Running professional NGSpice simulation for 100% accuracy...
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+13eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+3eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+6eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+9eruda.js:sourcemap:2 ⚠️ No data for connected net: GND
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+4eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+122eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+13eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+7eruda.js:sourcemap:2 ⚠️ No data for connected net: GND
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+8eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 400 (Bad Request)Understand this error
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 400 (Bad Request)Understand this error
+3eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+eruda.js:sourcemap:2 ✅ Professional simulation complete
+2eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+eruda.js:sourcemap:2 🔬 Running professional NGSpice simulation for 100% accuracy...
+73eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+176eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+8eruda.js:sourcemap:2 ⚠️ No data for connected net: NOISE
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+50eruda.js:sourcemap:2 ⚠️ No data for connected net: NOISE
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+4eruda.js:sourcemap:2 ⚠️ Oscilloscope probe not connected
+Mt.forEach.n.<computed> @ eruda.js:sourcemap:2Understand this warning
+33eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+8d52f505-3a69-4153-9f89-97244a29fb40-00-51qs8u9xcb70.kirk.replit.dev/api/ngspice/simulate:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)Understand this error
+15eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+21eruda.js:sourcemap:2 ✅ Monitoring Q4B with 1200 points, variation: 2.0mV

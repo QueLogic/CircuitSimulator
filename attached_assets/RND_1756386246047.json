@@ -1,0 +1,212 @@
+{
+  "design": "Minimal Avalanche-Noise → Clock Shaper (5–9 V)",
+  "version": "1.0",
+  "notes": [
+    "Transistors are NPN with pinout C-B-E left→right when the flat face is toward you.",
+    "Q1 = BC337 (noise source, reverse-biased emitter); Q4, Q5 = BC549/BC550/BC548/BC547 (amplifier + shaper).",
+    "Default supply is 5 V. If using 9 V, change R7 to 33 kΩ (others unchanged).",
+    "Electrolytics: C1(+)->Q1E node, C1(-)->Q4B node; C4(+)->+V, C4(-)->GND."
+  ],
+
+  "billOfMaterials": [
+    { "ref": "Q1", "type": "NPN BJT", "model": "BC337", "pinout": "C-B-E" },
+    { "ref": "Q4", "type": "NPN BJT", "model": "BC549 (BC547/548/550 ok)", "pinout": "C-B-E" },
+    { "ref": "Q5", "type": "NPN BJT", "model": "BC549 (BC547/548/550 ok)", "pinout": "C-B-E" },
+    { "ref": "R7", "type": "Resistor", "value": "15 kΩ @5V (33 kΩ @9V)" },
+    { "ref": "R8", "type": "Resistor", "value": "220 kΩ" },
+    { "ref": "R9", "type": "Resistor", "value": "100 kΩ" },
+    { "ref": "R10", "type": "Resistor", "value": "6.8 kΩ" },
+    { "ref": "C1", "type": "Electrolytic capacitor", "value": "1 µF", "polarity": "+ toward Q1E" },
+    { "ref": "C4", "type": "Electrolytic capacitor", "value": "100 µF", "polarity": "+ toward +V" }
+  ],
+
+  "junctions": [
+    {
+      "name": "Q1E",
+      "description": "Emitter noise node (reverse-biased via R7). Joins Q1.E + R7.2 + C1.1.",
+      "members": [
+        { "ref": "Q1", "pin": "E" },
+        { "ref": "R7", "pin": "2" },
+        { "ref": "C1", "pin": "1" }
+      ]
+    },
+    {
+      "name": "Q4B",
+      "description": "Q4 base node (bridge). Joins Q4.B + C1.2 + R9.1.",
+      "members": [
+        { "ref": "Q4", "pin": "B" },
+        { "ref": "C1", "pin": "2" },
+        { "ref": "R9", "pin": "1" }
+      ]
+    },
+    {
+      "name": "NOISE",
+      "description": "Amplified-noise collector node. Joins Q4.C + R8.2 + Q5.B.",
+      "members": [
+        { "ref": "Q4", "pin": "C" },
+        { "ref": "R8", "pin": "2" },
+        { "ref": "Q5", "pin": "B" }
+      ]
+    },
+    {
+      "name": "CLK",
+      "description": "Clock analog node (what the counter sees). Joins Q5.E + R10.1.",
+      "members": [
+        { "ref": "Q5", "pin": "E" },
+        { "ref": "R10", "pin": "1" }
+      ]
+    }
+  ],
+
+  "nets": [
+    {
+      "name": "+V",
+      "nodes": [
+        { "ref": "VCC", "pin": "+V" },
+        { "ref": "R7", "pin": "1", "note": "Bias for Q1 emitter" },
+        { "ref": "R8", "pin": "1", "note": "Collector load for Q4" },
+        { "ref": "Q5", "pin": "C", "note": "Q5 collector to +V" },
+        { "ref": "C4", "pin": "1", "note": "C4 positive" }
+      ]
+    },
+    {
+      "name": "GND",
+      "nodes": [
+        { "ref": "GND", "pin": "0V" },
+        { "ref": "Q1", "pin": "B", "note": "Q1 base tied to GND" },
+        { "ref": "Q1", "pin": "C", "note": "Q1 collector tied to GND" },
+        { "ref": "Q4", "pin": "E", "note": "Q4 emitter to GND" },
+        { "ref": "R9", "pin": "2", "note": "Q4 base leak to GND" },
+        { "ref": "R10", "pin": "2", "note": "Clock pull-down" },
+        { "ref": "C4", "pin": "2", "note": "C4 negative" }
+      ]
+    },
+    {
+      "name": "Q1E",
+      "nodes": [
+        { "ref": "Q1", "pin": "E" },
+        { "ref": "R7", "pin": "2" },
+        { "ref": "C1", "pin": "1", "polarity": "+" }
+      ]
+    },
+    {
+      "name": "Q4B",
+      "nodes": [
+        { "ref": "Q4", "pin": "B" },
+        { "ref": "C1", "pin": "2", "polarity": "-" },
+        { "ref": "R9", "pin": "1" }
+      ]
+    },
+    {
+      "name": "NOISE",
+      "nodes": [
+        { "ref": "Q4", "pin": "C" },
+        { "ref": "R8", "pin": "2" },
+        { "ref": "Q5", "pin": "B" }
+      ]
+    },
+    {
+      "name": "CLK",
+      "nodes": [
+        { "ref": "Q5", "pin": "E" },
+        { "ref": "R10", "pin": "1" }
+      ]
+    }
+  ],
+
+  "components": [
+    {
+      "ref": "Q1",
+      "kind": "transistor",
+      "model": "BC337 (NPN, C-B-E)",
+      "pins": {
+        "C": { "net": "GND", "comment": "collector tied to ground" },
+        "B": { "net": "GND", "comment": "base tied to ground" },
+        "E": { "net": "Q1E", "comment": "reverse-biased via R7 to make avalanche/shot noise" }
+      }
+    },
+    {
+      "ref": "R7",
+      "kind": "resistor",
+      "value": "15 kΩ @5V (33 kΩ @9V)",
+      "pins": {
+        "1": { "net": "+V" },
+        "2": { "net": "Q1E" }
+      }
+    },
+    {
+      "ref": "C1",
+      "kind": "capacitor",
+      "type": "electrolytic",
+      "value": "1 µF",
+      "pins": {
+        "1": { "net": "Q1E", "polarity": "+" },
+        "2": { "net": "Q4B", "polarity": "-" }
+      },
+      "comment": "AC-couples noise into Q4 base"
+    },
+    {
+      "ref": "R9",
+      "kind": "resistor",
+      "value": "100 kΩ",
+      "pins": {
+        "1": { "net": "Q4B" },
+        "2": { "net": "GND" }
+      },
+      "comment": "Leaks Q4 base to 0 V (sets DC)"
+    },
+    {
+      "ref": "Q4",
+      "kind": "transistor",
+      "model": "BC549 (NPN, C-B-E)",
+      "pins": {
+        "C": { "net": "NOISE", "comment": "collector output" },
+        "B": { "net": "Q4B" },
+        "E": { "net": "GND" }
+      },
+      "comment": "Common-emitter amplifier"
+    },
+    {
+      "ref": "R8",
+      "kind": "resistor",
+      "value": "220 kΩ",
+      "pins": {
+        "1": { "net": "+V" },
+        "2": { "net": "NOISE" }
+      },
+      "comment": "Collector load for Q4 (sets gain)"
+    },
+    {
+      "ref": "Q5",
+      "kind": "transistor",
+      "model": "BC549 (NPN, C-B-E)",
+      "pins": {
+        "C": { "net": "+V" },
+        "B": { "net": "NOISE" },
+        "E": { "net": "CLK", "comment": "drive to clock input" }
+      },
+      "comment": "Emitter follower / edge shaper"
+    },
+    {
+      "ref": "R10",
+      "kind": "resistor",
+      "value": "6.8 kΩ",
+      "pins": {
+        "1": { "net": "CLK" },
+        "2": { "net": "GND" }
+      },
+      "comment": "Pulls clock node low; shapes edges"
+    },
+    {
+      "ref": "C4",
+      "kind": "capacitor",
+      "type": "electrolytic",
+      "value": "100 µF",
+      "pins": {
+        "1": { "net": "+V", "polarity": "+" },
+        "2": { "net": "GND", "polarity": "-" }
+      },
+      "comment": "Supply decoupling"
+    }
+  ]
+}

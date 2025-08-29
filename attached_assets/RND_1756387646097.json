@@ -1,0 +1,208 @@
+{
+  "design": "Minimal Avalanche-Noise Source with Oscilloscope Monitor (End-of-Entropy)",
+  "version": "1.1",
+  "notes": [
+    "Goal: Monitor the entropy (noise) right at the end of the noise chain (Q4 collector) with an oscilloscope.",
+    "Transistors are NPN, pinout C-B-E left→right when the flat face is toward you.",
+    "Q1 = BC337 (used as reverse-biased B–E noise source). Q4 = BC549/BC550/BC548/BC547 (common-emitter amplifier).",
+    "Supply is 5 V. If using 9 V, change R7 to 33 kΩ. Other values unchanged.",
+    "Electrolytics: C1(+) toward Q1E, C1(−) toward Q4B; C2(+) toward NOISE node, C2(−) toward oscilloscope TIP; C4(+) to +V, C4(−) to GND."
+  ],
+
+  "billOfMaterials": [
+    { "ref": "Q1", "type": "NPN BJT", "model": "BC337", "pinout": "C-B-E" },
+    { "ref": "Q4", "type": "NPN BJT", "model": "BC549 (BC547/548/550 ok)", "pinout": "C-B-E" },
+    { "ref": "R7", "type": "Resistor", "value": "15 kΩ @5V (33 kΩ @9V)" },
+    { "ref": "R8", "type": "Resistor", "value": "220 kΩ" },
+    { "ref": "R9", "type": "Resistor", "value": "100 kΩ" },
+    { "ref": "C1", "type": "Electrolytic capacitor", "value": "1 µF", "polarity": "+ toward Q1E" },
+    { "ref": "C2", "type": "Electrolytic capacitor", "value": "10 µF", "polarity": "+ toward NOISE, − toward scope TIP" },
+    { "ref": "C4", "type": "Electrolytic capacitor", "value": "100 µF", "polarity": "+ to +V" },
+    { "ref": "OSC", "type": "Instrument", "model": "Oscilloscope (monitor)", "channels": "CH1 TIP + GND" }
+  ],
+
+  "junctions": [
+    {
+      "name": "Q1E",
+      "description": "Emitter noise node (reverse-biased via R7). Joins Q1.E + R7.2 + C1.1.",
+      "members": [
+        { "ref": "Q1", "pin": "E" },
+        { "ref": "R7", "pin": "2" },
+        { "ref": "C1", "pin": "1", "polarity": "+" }
+      ]
+    },
+    {
+      "name": "Q4B",
+      "description": "Q4 base node (bridge). Joins Q4.B + C1.2 + R9.1.",
+      "members": [
+        { "ref": "Q4", "pin": "B" },
+        { "ref": "C1", "pin": "2", "polarity": "−" },
+        { "ref": "R9", "pin": "1" }
+      ]
+    },
+    {
+      "name": "NOISE",
+      "description": "End-of-entropy node (amplified noise at Q4 collector). Joins Q4.C + R8.2 + C2.1.",
+      "members": [
+        { "ref": "Q4", "pin": "C" },
+        { "ref": "R8", "pin": "2" },
+        { "ref": "C2", "pin": "1", "polarity": "+" }
+      ]
+    },
+    {
+      "name": "SCOPE_OUT",
+      "description": "AC-coupled monitor point to oscilloscope TIP. Joins C2.2 + OSC.CH1_TIP.",
+      "members": [
+        { "ref": "C2", "pin": "2", "polarity": "−" },
+        { "ref": "OSC", "pin": "CH1_TIP" }
+      ]
+    }
+  ],
+
+  "nets": [
+    {
+      "name": "+V",
+      "nodes": [
+        { "ref": "VCC", "pin": "+V" },
+        { "ref": "R7", "pin": "1", "note": "Bias for Q1 emitter" },
+        { "ref": "R8", "pin": "1", "note": "Collector load for Q4" },
+        { "ref": "C4", "pin": "1", "note": "C4 positive" }
+      ]
+    },
+    {
+      "name": "GND",
+      "nodes": [
+        { "ref": "GND", "pin": "0V" },
+        { "ref": "Q1", "pin": "B", "note": "Q1 base tied to GND" },
+        { "ref": "Q1", "pin": "C", "note": "Q1 collector tied to GND" },
+        { "ref": "Q4", "pin": "E", "note": "Q4 emitter to GND" },
+        { "ref": "R9", "pin": "2", "note": "Q4 base leak to GND" },
+        { "ref": "C4", "pin": "2", "note": "C4 negative" },
+        { "ref": "OSC", "pin": "GND", "note": "Scope reference ground" }
+      ]
+    },
+    {
+      "name": "Q1E",
+      "nodes": [
+        { "ref": "Q1", "pin": "E" },
+        { "ref": "R7", "pin": "2" },
+        { "ref": "C1", "pin": "1", "polarity": "+" }
+      ]
+    },
+    {
+      "name": "Q4B",
+      "nodes": [
+        { "ref": "Q4", "pin": "B" },
+        { "ref": "C1", "pin": "2", "polarity": "−" },
+        { "ref": "R9", "pin": "1" }
+      ]
+    },
+    {
+      "name": "NOISE",
+      "nodes": [
+        { "ref": "Q4", "pin": "C" },
+        { "ref": "R8", "pin": "2" },
+        { "ref": "C2", "pin": "1", "polarity": "+" }
+      ]
+    },
+    {
+      "name": "SCOPE_OUT",
+      "nodes": [
+        { "ref": "C2", "pin": "2", "polarity": "−" },
+        { "ref": "OSC", "pin": "CH1_TIP" }
+      ]
+    }
+  ],
+
+  "components": [
+    {
+      "ref": "Q1",
+      "kind": "transistor",
+      "model": "BC337 (NPN, C-B-E)",
+      "pins": {
+        "C": { "net": "GND", "comment": "collector tied to ground" },
+        "B": { "net": "GND", "comment": "base tied to ground" },
+        "E": { "net": "Q1E", "comment": "reverse-biased via R7 to make avalanche/shot noise" }
+      }
+    },
+    {
+      "ref": "R7",
+      "kind": "resistor",
+      "value": "15 kΩ @5V (33 kΩ @9V)",
+      "pins": { "1": { "net": "+V" }, "2": { "net": "Q1E" } },
+      "comment": "Sets Q1 emitter reverse bias"
+    },
+    {
+      "ref": "C1",
+      "kind": "capacitor",
+      "type": "electrolytic",
+      "value": "1 µF",
+      "pins": {
+        "1": { "net": "Q1E", "polarity": "+" },
+        "2": { "net": "Q4B", "polarity": "−" }
+      },
+      "comment": "AC-couples noise to Q4 base"
+    },
+    {
+      "ref": "R9",
+      "kind": "resistor",
+      "value": "100 kΩ",
+      "pins": { "1": { "net": "Q4B" }, "2": { "net": "GND" } },
+      "comment": "Leaks Q4 base to 0 V (sets DC)"
+    },
+    {
+      "ref": "Q4",
+      "kind": "transistor",
+      "model": "BC549 (NPN, C-B-E)",
+      "pins": {
+        "C": { "net": "NOISE", "comment": "collector output (end of entropy)" },
+        "B": { "net": "Q4B" },
+        "E": { "net": "GND" }
+      },
+      "comment": "Common-emitter amplifier"
+    },
+    {
+      "ref": "R8",
+      "kind": "resistor",
+      "value": "220 kΩ",
+      "pins": { "1": { "net": "+V" }, "2": { "net": "NOISE" } },
+      "comment": "Collector load for Q4 (sets gain)"
+    },
+    {
+      "ref": "C2",
+      "kind": "capacitor",
+      "type": "electrolytic",
+      "value": "10 µF",
+      "pins": {
+        "1": { "net": "NOISE", "polarity": "+" },
+        "2": { "net": "SCOPE_OUT", "polarity": "−" }
+      },
+      "comment": "AC-couples NOISE node to oscilloscope TIP"
+    },
+    {
+      "ref": "C4",
+      "kind": "capacitor",
+      "type": "electrolytic",
+      "value": "100 µF",
+      "pins": { "1": { "net": "+V", "polarity": "+" }, "2": { "net": "GND", "polarity": "−" } },
+      "comment": "Supply decoupling"
+    }
+  ],
+
+  "instruments": [
+    {
+      "ref": "OSC",
+      "kind": "oscilloscope",
+      "channels": {
+        "CH1_TIP": { "net": "SCOPE_OUT", "coupling": "AC via C2", "comment": "Monitors end-of-entropy node after C2" },
+        "GND":     { "net": "GND" }
+      },
+      "probe": "1× or 10×",
+      "suggestedSettings": {
+        "voltPerDiv": "0.2–0.5 V/div",
+        "timePerDiv": "1–10 ms/div",
+        "notes": "Start with DC coupling on the scope if desired; C2 already AC-couples the node."
+      }
+    }
+  ]
+}

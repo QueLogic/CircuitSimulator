@@ -1,0 +1,43 @@
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE
+🔍 Getting series for net "NOISE"
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+⚠️ No series data for NOISE, trying differential measurement
+📊 getSeriesForNet(NOISE): node=4, timePoints=50017, voltPoints=0
+❌ getSeriesForNet: Data length mismatch - time:50017, volts:0
+❌ No valid series data for NOISE

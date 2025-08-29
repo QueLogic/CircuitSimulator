@@ -1,0 +1,194 @@
+🚀 MASTER PROMPT FOR REPLIT AI
+Role: You are a senior engineer tasked with building a node-based electrical circuit simulator that is free, accurate, and extensible.
+Goal: Deliver a working web app with a drag-and-drop node editor (components with pins), a Python simulation backend powered by Ngspice via PySpice, with built-in Oscilloscope and Multimeter (as both toolbar instruments and as connectable nodes), and an Audio Jack node to render audio from simulated waveforms. Include import/export of a JSON circuit schema.
+🔒 Use this exact tech stack (no alternatives)
+•	Solver: ngspice (system package)
+•	Backend: Python 3.11 + pyspice, numpy, lcapy, fastapi, pydantic, uvicorn
+•	Frontend: React + TypeScript + Vite + Tailwind; Node-based editor using reactflow
+•	Plots: Frontend oscilloscope via uPlot (fast real-time plotting)
+•	Packaging: Dockerfile that installs ngspice and runs FastAPI + Vite build
+•	Testing: pytest (unit), playwright (smoke E2E)
+•	Licenses: Only permissive/open-source
+# Python deps (pin reasonably)
+pip install pyspice==1.5.2 numpy==2.0.1 lcapy==0.112 fastapi==0.112.0 pydantic==2.8.2 uvicorn==0.30.5 pytest==8.3.2
+
+# System deps
+apt-get update && apt-get install -y ngspice
+🔎 Accuracy note: Perfect “100% accuracy” is not possible in all regimes; require industry-standard SPICE convergence and accepted device models. Expose model-card overrides and simulation tolerances (RELTOL, ABSTOL, VNTOL) in an “Advanced” panel so users can tighten accuracy and trade off performance.
+________________________________________
+🧩 Components to implement (all as nodes with correct pins)
+Pins appear on node edges and can be interactively rewired. Every node has editable properties (value/model).
+Discrete: Resistor, Capacitor, Diode, LED (with color & Vf/Imax), NPN/PNP BJTs (generic + named models)
+Transistors (named): BC327, BC337, BC517, BC547, BC548, BC549, BC550, BC556, BC557, BC558
+Op-amps / Comparators: LM358, LM324, JRC4558, NE5532, LM393, LM339
+Timers / Audio / Amplifiers: NE555, LM386, TDA2822D, PT2399
+CMOS Logic / Counters / Mux: CD4001BE, CD4011BE, CD4017BE, CD4052BE, CD4053BE, CD4060BE, CD4069UBE, CD4007UBE, CD4013BE, CD4093BE
+Instruments (toolbar & nodes):
+•	Oscilloscope (toolbar panel + “Oscilloscope Node” with CH1/CH2 inputs)
+•	Multimeter (DMM for V, I, R; can attach to a net or series element)
+•	Audio Jack node (mono): reads a selected node voltage, AC couples, scales to 16-bit PCM, streams to an <audio> element (44.1 kHz).
+Sources: DC source, AC source, Pulse source, “Audio Oscillator” node (sine/square/tri, freq, amp).
+Ground: GND node (enforce at least one).
+Create vendor-models/ with SPICE subcircuits for the named ICs and BJTs. Provide a fallback generic model for each family. Users can drop a .lib/.subckt there and select it in the UI.
+________________________________________
+🧠 Back-end “brain” (FastAPI + PySpice + Ngspice)
+•	Netlist generation: Frontend sends JSON describing nodes, pins, and connections. Backend converts to a deterministic SPICE netlist.
+•	Analyses: DC operating point, Transient, AC sweep, Noise (if supported by models).
+•	Instruments:
+o	Oscilloscope API: start/stop transient run; stream downsampled timeseries chunks (SSE or WebSocket).
+o	Multimeter API: compute node voltage, device current, device resistance (use DC/OP solve + small-signal calc where needed).
+o	Audio API: resample the simulated node voltage to 44.1 kHz PCM; apply simple limiter and high-pass at ~20 Hz; stream WAV chunks.
+•	Stability: Sensible defaults (eg., maxstep, tstep, tstop), but allow overrides.
+•	Safety: Validate circuits (at least one GND, no floating op-amp supply, device ratings check for LEDs/transistors; warn if If exceeds LED Imax or Vce/Vbe exceeds ratings).
+________________________________________
+🗂️ Project structure
+/app
+  /backend
+    main.py           # FastAPI app
+    netlist.py        # JSON→SPICE netlist compiler
+    models/           # Pydantic schemas for circuit, components, pins
+    simulate.py       # Analysis runners (dc/ac/tran, noise)
+    instruments.py    # Scope, DMM, Audio
+    vendor-models/    # .lib/.subckt files (ICs, BJTs)
+    tests/
+  /frontend
+    index.html
+    src/
+      main.tsx
+      App.tsx
+      editor/         # ReactFlow nodes, edges, pin handles
+      panels/         # Properties inspector, scope, DMM, audio
+      stores/         # Zustand for state
+      api/            # REST/WebSocket clients
+  Dockerfile
+  README.md
+________________________________________
+🧾 Circuit JSON schema (import/export)
+Use a stable schema with: components[], connections[], and instruments[]. Include reference designator, type/model, pins{ name → net }, properties.
+Also support importing files in the style of the uploaded RND.json example (avalanche-noise with oscilloscope node) to auto-place nodes and nets; preserve component refs and polarity hints. Use it as a compatibility target and a sample for validation. 
+Requirements:
+•	Import: Validate, map to internal schema, and render graph with draggable nodes and correct pin anchors.
+•	Export: Round-trip losslessly (re-import should reproduce the exact topology and properties).
+________________________________________
+🎛️ Editor UX details
+•	Node pins on edges; snap-to-grid; marquee multi-select; reroutable orthogonal wires; pan/zoom.
+•	Property panel: edit values (e.g., R=10k, C=100n, LED color & Imax, op-amp rails), pick model card, set analysis parameters.
+•	Scope panel: run/stop, channel selection (any net), coupling (AC/DC), time/div, volt/div, trigger.
+•	DMM: select net(s) or element; live readout during sim.
+•	Audio: choose net, gain, HPF on/off, stream/play.
+•	Errors & limits: live warnings for over-voltage/current on LEDs and BJTs.
+________________________________________
+🧪 Validation & demo circuits (must pass)
+1.	RC Low-pass: AC sweep vs analytic (lcapy) within 1% at decades; transient step matches τ within 2%.
+2.	NE555 astable: frequency matches formula within 2% for R/C range.
+3.	LED current limit: series R sized so I ≤ Imax; app warns if exceeded.
+4.	Op-amp follower (LM358): DC gain ≥ 0.99 with rails, shows saturation if input near rail.
+5.	CD4017 clock: 555 clock drives 4017; Q outputs advance; DMM reads logic levels.
+6.	Audio Oscillator → Audio Jack: 1 kHz sine produces clean audio (no clipping) at target RMS.
+7.	Import sample: Import the provided RND.json and show the oscilloscope on the specified node; waveforms stream without errors. 
+________________________________________
+📋 Staged plan (what to build, in order)
+Stage 0 – Scaffold & CI
+•	Create repo layout, Dockerfile, FastAPI hello route, Vite React app, Playwright + Pytest, GitHub Actions or Replit CI.
+Stage 1 – JSON schema & compiler
+•	Define Pydantic models for circuit graph → deterministic SPICE netlist emission (component mapping, nets, ground checks).
+Stage 2 – Ngspice integration (PySpice)
+•	Implement DC, AC, Transient runners; expose /simulate/dc, /simulate/ac, /simulate/tran.
+•	Add tolerances/advanced settings.
+Stage 3 – Instruments API
+•	/instrument/scope (WS/SSE stream); /instrument/dmm; /instrument/audio (PCM chunk stream).
+Stage 4 – ReactFlow editor
+•	Nodes for: R, C, LED, NPN/PNP, DC/AC/Pulse sources, GND.
+•	Wire routing, drag/zoom, properties inspector, undo/redo.
+Stage 5 – Expand library
+•	Add named BJTs, NE555, LM358/LM324/JRC4558/NE5532, LM393/LM339, LM386/TDA2822D/PT2399, CD40xx family.
+Stage 6 – Scope/DMM/Audio UI
+•	Real-time plots with uPlot; DMM readouts; audio playback; start/stop controls.
+Stage 7 – Import/Export
+•	Implement JSON round-trip; add importer compatible with RND.json; sample button: “Load Example”. 
+Stage 8 – Validation & perf
+•	Implement test circuits; verify numeric targets; profile bottlenecks; document limitations.
+Stage 9 – Polish
+•	README with usage; examples; error explanations; keyboard shortcuts; dark theme.
+________________________________________
+✅ Acceptance criteria (must meet to ship)
+•	Runs in Docker; one-command start: docker build . && docker run -p 5173:5173 -p 8000:8000 app
+•	Editor supports adding/removing/configuring all listed components with correct pins.
+•	Ngspice runs DC/AC/Transient with adjustable settings; errors surfaced clearly.
+•	Oscilloscope node & panel stream waveforms smoothly (≥30 FPS plotting for ≤5k pts/sec).
+•	DMM measures node voltages and element currents.
+•	Audio Jack streams clean audio from a selected net at 44.1 kHz.
+•	JSON circuits import/export (round-trip exact); RND.json imports and displays correctly. 
+•	At least 7 demo examples present and documented.
+•	Unit/E2E tests pass.
+________________________________________
+✍️ Copy blocks Replit should generate
+1.	Dockerfile that installs ngspice, builds frontend, runs FastAPI + static serve.
+2.	FastAPI backend with endpoints:
+o	POST /simulate/dc|ac|tran
+o	GET /instrument/scope|dmm|audio (WS/SSE)
+3.	Netlist compiler mapping JSON → SPICE, including subcircuit inclusion from vendor-models/.
+4.	React/TS editor using ReactFlow: custom node renderers for each component; pin handles; property panels.
+5.	Oscilloscope (uPlot), Multimeter, Audio player components.
+6.	Importer for RND.json sample and exporter that round-trips. 
+7.	Tests for numerical validation and UI smoke.
+________________________________________
+🧪 LED brightness & device stress (practical)
+•	LED node shows estimated brightness by mapping current to relative luminous intensity (document assumption).
+•	Warn if I_f > Imax or device junction limits exceeded; highlight offending connections.
+•	Show estimated power dissipation for R, BJT, LED; temperature rise estimate (simple).
+________________________________________
+🧯 Error messaging
+Plain English explanations (e.g., “No ground reference”, “Op-amp rails missing”, “LED overcurrent — increase series resistor”).
+________________________________________
+Deliver all of the above. Do not swap libraries. Follow the stages in order. Ask no clarifying questions; implement using the constraints provided and verify with the included example JSON.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+•	BAT1 (5 V battery)
+o	+ → R7 (pin 1), R8 (pin 1), C4 (+)
+o	– → GND
+•	Q1 (BC337)
+o	C → GND
+o	B → GND
+o	E → node Q1E (to R7 pin 2, C1 +)
+•	R7 (15 kΩ)
+o	Pin 1 → +5 V
+o	Pin 2 → Q1E
+•	C1 (1 µF)
+o	
+	→ Q1E
+o	– → Q4B node (Q4 base, R9 pin 1)
+•	R9 (100 kΩ)
+o	Pin 1 → Q4B
+o	Pin 2 → GND
+•	Q4 (BC549)
+o	C → NOISE node (R8 pin 2, C2 +)
+o	B → Q4B node
+o	E → GND
+•	R8 (220 kΩ)
+o	Pin 1 → +5 V
+o	Pin 2 → NOISE
+•	C2 (10 µF)
+o	
+	→ NOISE
+o	– → SCOPE_OUT
+•	C4 (100 µF)
+o	
+	→ +5 V
+o	– → GND
+•	OSC
+o	CH1 tip → SCOPE_OUT
+o	GND → GND
+

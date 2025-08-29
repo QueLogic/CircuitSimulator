@@ -1,0 +1,26 @@
+🔬 Running professional NGSpice simulation for 100% accuracy...
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[Q4B,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, OSC, N5
+✅ Monitoring Q4B with 1200 points, variation: 2.0mV
+⚠️ Oscilloscope probe not connected
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[DISCONNECTED_1756458275429_oznvgq,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, N5
+⚠️ Oscilloscope probe not connected
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[DISCONNECTED_1756458274018_4eilti,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, N5
+⚠️ Oscilloscope probe not connected
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[DISCONNECTED_1756458274018_4eilti,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, N5
+⚠️ Oscilloscope probe not connected
+Sending 15 components to NGSpice
+Components: BAT1[+5V,GND] | Q1[GND,GND,Q1E] | R7[+5V,Q1E] | C1[Q1E,Q4B] | R9[Q4B,GND] | Q4[NOISE,Q4B,GND] | R8[+5V,DISCONNECTED_1756458274018_4eilti] | C2[NOISE,SCOPE_OUT] | C4[+5V,GND] | OSC[DISCONNECTED_1756458274018_4eilti,GND] | N1[+5V,+5V] | N2[GND,GND] | N3[NOISE,NOISE] | N4[Q1E,Q1E] | N5[Q4B,Q4B]
+Components with Q4B net: C1, R9, Q4, N5
+⚠️ Oscilloscope probe not connected

@@ -1,0 +1,96 @@
+
+## 0) High‑level: what we’re changing
+
+1. **simple-spice.ts**
+   - Move to a **single-pass, emit‑and‑collect** strategy:
+     - As we **emit each SPICE element line**, we **register only those nets** into `netToNodeMap`.
+     - **Display‑only** components (oscilloscope probes, “node”, “label”, etc.) are **ignored** for mapping and emission.
+   - Normalize net names (`trim`, remove Unicode ohm, unify GND → `0`), and parse values like `"15kΩ"`.
+   - Add invariant checks + debug logs to ensure map ↔ netlist consistency before writing the file.
+
+2. **ngspice-interface.ts**
+   - Ensure the **returned series** use **net names** (e.g. `Q4B`) by mapping NGSpice variables `v(nX)` back through the map.
+   - Keep the `netToNodeMap` in the response so the UI can tag traces correctly.
+
+3. **ngspice-simulation.ts (route)**
+   - No logic change; just pass through the improved payload and keep logs.
+
+4. **oscilloscope-panel.tsx (client)**
+   - Don’t assume numeric nodes. Resolve by **net name** using the `netToNodeMap` from the API.
+   - Fail gracefully if a requested net is not simulated.
+
+5. **ngspice-client.ts (client)**
+   - Ensure response parsing preserves `netToNodeMap` and **series labels**.
+
+6. **shared/schema.ts**
+   - Confirm types for `netToNodeMap`, `nodeToNetMap`, and `series: { label, x, y }[]`.
+
+---
+
+## 1) `/server/utils/simple-spice.ts` — Emit‑and‑Collect
+
+> **Goal:** Build the node map **only from the nets we actually write into the SPICE netlist**.
+
+**Key ideas:**
+- Define a set of **display-only** component types to skip entirely for both mapping and emission.
+- **While generating each line**, register its nets (`touchNet(name)`).
+- Normalize: `normalizeNet(" GND ") → "0"`, `"15kΩ"` → `15000`, `"3u"` → `3e-6`.
+
+
+```ts
+// --- PATCH: top of file (imports + helpers) ---
+const DISPLAY_ONLY_TYPES = new Set<string>([
+  "oscilloscope",   // panel/probe-only items
+  "node",
+  "label",
+  "measurement",
+  "multimeter",
+]);
+
+// Maps readable net names to compact node numbers NGSpice expects.
+type NetToNodeMap = Record<string, number>;
+
+const OHM_CHARS = /[ΩΩ]/g;
+
+function normalizeNet(raw?: string | null): string {
+  if (!raw) return "";
+  let s = String(raw).trim();
+  // Treat common ground labels as 0
+  const upper = s.toUpperCase();
+  if (upper === "0" || upper === "GND" || upper === "GROUND" || upper === "AGND" || upper === "DGND") {
+    return "0";
+  }
+  return s;
+}
+
+function parseValue(val: string | number | undefined | null, fallback = 0): number {
+  if (val == null) return fallback;
+  if (typeof val === "number") return val;
+
+  let s = val.trim().replace(OHM_CHARS, ""); // "15kΩ" -> "15k"
+  // Accept underscores, spaces
+  s = s.replace(/_/g, "").replace(/\s+/g, "");
+
+  const m = s.match(/^([+-]?\d*\.?\d+(?:[eE][+-]?\d+)?)([a-zA-Z]*)$/);
+  if (!m) {
+    const n = Number(s);
+    return Number.isFinite(n) ? n : fallback;
+  }
+  const [, numStr, suffixRaw] = m;
+  const num = Number(numStr);
+  if (!Number.isFinite(num)) return fallback;
+
+  const suffix = suffixRaw.toLowerCase();
+  const mult =
+    suffix === "t" ? 1e12 :
+    suffix === "g" ? 1e9  :
+    suffix === "meg" ? 1e6 :
+    suffix === "m" ? 1e-3 :
+    suffix === "k" ? 1e3  :
+    suffix === "u" || suffix === "µ" ? 1e-6 :
+    suffix === "n" ? 1e-9 :
+    suffix === "p" ? 1e-12 :
+    1;
+
+  return num * mult;
+}
